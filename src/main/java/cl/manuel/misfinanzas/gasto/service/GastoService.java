@@ -83,14 +83,13 @@ public class GastoService {
      * la mitad del monto si el gasto es compartido, el total si no lo es.
      */
     private GastoResponseDTO toResponseDTO(Gasto gasto) {
-        Long miCosto = gasto.getCompartido() ? gasto.getMonto() / 2 : gasto.getMonto();
         return new GastoResponseDTO(
                 gasto.getId(),
                 gasto.getNombre(),
                 gasto.getMonto(),
                 gasto.getCategoria(),
                 gasto.getCompartido(),
-                miCosto
+                gasto.getMiCosto()      // ← ahora usa el método de la entidad
         );
     }
 

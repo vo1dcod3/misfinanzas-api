@@ -50,7 +50,9 @@ public class Gasto {
     public boolean getActivo() { return activo; }
     public void setActivo(boolean activo) { this.activo = activo; }
 
-
-
+    /** Lo que realmente cuesta al usuario: la mitad si es compartido, el total si no. */
+    public long getMiCosto() {
+        return compartido ? monto / 2 : monto;
+    }
 
 }
